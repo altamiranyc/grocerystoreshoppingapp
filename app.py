@@ -1,8 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # This allows your frontend to communicate with this backend
+CORS(app)
 
 @app.route('/')
 def home():
@@ -12,7 +12,7 @@ def home():
 def test():
     return jsonify({"status": "success", "message": "API is working!"})
 
-# Add more routes as needed for your application
+# Add more routes as needed
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
